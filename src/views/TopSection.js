@@ -4,7 +4,7 @@ import Modes from '../components/top/Modes'
 import Header from '../components/top/Header'
 import styled from '@emotion/styled'
 
-const OutPut = () => {
+const TopSection = () => {
     return (
         <Container>
             <Header />
@@ -14,7 +14,7 @@ const OutPut = () => {
     )
 }
 
-export default OutPut
+export default TopSection
 
 const Container = styled.div`
     margin-bottom: 80px;
