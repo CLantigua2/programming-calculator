@@ -1,16 +1,13 @@
 import React, { useState } from 'react'
 import styled from '@emotion/styled'
 
-const Nav = props => {
+const Nav = () => {
   const [burger, setBurger] = useState(false)
-
   return (
-    <Burger>
-
-      <div className="bar1"></div>
-      <div className="bar2"></div>
-      <div className="bar3"></div>
-
+    <Burger onClick={() => setBurger(!burger)}>
+      <div className={`${burger === true ? `change1` : ''} bar1`}></div>
+      <div className={`${burger === true ? `change2` : ''} bar2`}></div>
+      <div className={`${burger === true ? `change3` : ''} bar3`}></div>
     </Burger >
   )
 }
@@ -29,14 +26,14 @@ const Burger = styled.div`
   transition: 0.4s;
 }
 
-.change .bar1 {
+.change1  {
   -webkit-transform: rotate(-45deg) translate(-9px, 6px);
   transform: rotate(-45deg) translate(-9px, 6px);
 }
 
-.change .bar2 {opacity: 0;}
+.change2 {opacity: 0;}
 
-.change .bar3 {
+.change3 {
   -webkit-transform: rotate(45deg) translate(-8px, -8px);
   transform: rotate(45deg) translate(-8px, -8px);
 }
