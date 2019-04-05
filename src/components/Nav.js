@@ -19,16 +19,16 @@ const Burger = styled.div`
   cursor: pointer;
 
 .bar1, .bar2, .bar3 {
-  width: 35px;
-  height: 5px;
-  background-color: #333;
+  width: 25px;
+  height: 2px;
+  background-color: #fff;
   margin: 6px 0;
   transition: 0.4s;
 }
 
 .change1  {
-  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-  transform: rotate(-45deg) translate(-9px, 6px);
+  -webkit-transform: rotate(-45deg) translate(-4.5px, 3px);
+  transform: rotate(-45deg) translate(-4.5px, 3px);
 }
 
 .change2 {opacity: 0;}
