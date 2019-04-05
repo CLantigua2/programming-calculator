@@ -1,6 +1,6 @@
 import React from 'react'
-import Title from '../components/Title'
-import Nav from '../components/Nav'
+import Title from './Title'
+import Nav from './Nav'
 import { Route } from 'react-router'
 import styled from '@emotion/styled'
 
