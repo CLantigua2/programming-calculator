@@ -1,13 +1,12 @@
 import React from 'react'
 import Title from './Title'
 import Nav from './Nav'
-import { Route } from 'react-router'
 import styled from '@emotion/styled'
 
 const Header = () => (
     <Container>
-        <Route to="/"><Nav /></Route>
-        <Route to="/"><Title /></Route>
+        <Nav />
+        <Title />
     </Container>
 )
 

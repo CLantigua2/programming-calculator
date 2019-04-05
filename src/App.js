@@ -1,6 +1,6 @@
 import React from 'react';
 import Container from './views/Container'
-import Header from './components/top'
+import Tabs from './components/top/Tabs'
 import OutPut from './views/OutPut'
 
 import './App.css';
@@ -10,6 +10,7 @@ const App = () => {
     <div className="App">
       <Container>
         <OutPut />
+        <Tabs />
       </Container>
     </div>
   );
