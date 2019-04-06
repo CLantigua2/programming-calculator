@@ -6,9 +6,15 @@ const options = ['↑', 'Mod', 'CE', 'C', '⇐']
 
 const Modifiers = () => {
     const { state, dispatch } = useContext(Store)
+    const { input } = state
+    const onModClick = item => {
+        if (item === 'C') {
+            dispatch({ type: "NUM_INPUT", payload: '0' })
+        }
+    }
     return (
         <Container>
-            {options.map(item => <button>{item}</button>)}
+            {options.map(item => <button onClick={() => onModClick(item)}>{item}</button>)}
         </Container>
     )
 }
