@@ -1,12 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { Store } from '../../store/store'
 import styled from '@emotion/styled'
+import { opChecker } from '../utils/'
 
 const options = ['÷', 'X', '-', '+', '=']
 
 const Operators = () => {
+    const { state, dispatch } = useContext(Store)
+    const { savedOperator, input, savedInput } = state
+
+    const onOpClick = item => {
+        opChecker(item, dispatch, input, savedOperator, savedInput)
+    }
+    console.log(savedOperator)
     return (
         <Container>
-            {options.map(item => <button>{item}</button>)}
+            {options.map(item => <button key={item} onClick={() => onOpClick(item)}>{item}</button>)}
         </Container>
     )
 }

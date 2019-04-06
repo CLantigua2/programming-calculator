@@ -15,7 +15,7 @@ const Digits = () => {
     }
     return (
         <Container>
-            {options.map(item => <button onClick={() => onDigitClick(item)}>{item}</button>)}
+            {options.map(item => <button key={item} onClick={() => onDigitClick(item)}>{item}</button>)}
         </Container>
     )
 }

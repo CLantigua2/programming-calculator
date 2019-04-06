@@ -15,7 +15,14 @@ const reducer = (state, action) => {
         case "NUM_INPUT":
             return { ...state, input: action.payload }
         case "OP_INPUT":
-            return { ...state, savedOperator: action.payload, savedInput: state.input }
+            console.log(action.payload)
+            const { savedInput, savedOp, op } = action.payload
+            return {
+                ...state,
+                input: '0',
+                savedInput,
+                savedOperator: `${savedOp} ${op}`,
+            }
         default:
             return state;
     }

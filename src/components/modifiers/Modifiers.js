@@ -14,7 +14,7 @@ const Modifiers = () => {
     }
     return (
         <Container>
-            {options.map(item => <button onClick={() => onModClick(item)}>{item}</button>)}
+            {options.map(item => <button key={item} onClick={() => onModClick(item)}>{item}</button>)}
         </Container>
     )
 }

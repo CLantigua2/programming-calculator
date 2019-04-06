@@ -54,3 +54,36 @@ export const numChecker = (num, cb, input) => {
             break;
     }
 }
+
+export const opChecker = (op, cb, input, savedOp, savedInput) => {
+    switch (op) {
+        case '÷':
+            if (input !== '0') {
+                cb({ type: "OP_INPUT", payload: { savedInput: `${input}${op}` } })
+            }
+            break;
+        case 'X':
+            if (input !== '0') {
+                cb({ type: "OP_INPUT", payload: savedOp, input: '0' })
+            }
+            break;
+        case '-':
+            if (input !== '0') {
+                cb({ type: "OP_INPUT", payload: savedOp, input: '0' })
+            }
+            break;
+        case '+':
+            if (input !== '0') {
+                cb({ type: "OP_INPUT", payload: savedOp, input: '0' })
+            }
+            break;
+        case '=':
+            if (input !== '0') {
+                cb({ type: "OP_INPUT", payload: savedOp, input: parseInt(savedOp) + parseInt(input), savedInput: '0' })
+            }
+            break;
+
+        default:
+            break;
+    }
+}

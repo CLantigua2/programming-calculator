@@ -6,7 +6,7 @@ const options = ['A', 'B', 'C', 'D', 'E', 'F', '(', ')']
 const Alphabets = () => {
     return (
         <Container>
-            {options.map(item => <button>{item}</button>)}
+            {options.map(item => <button key={item}>{item}</button>)}
         </Container>
     )
 }
