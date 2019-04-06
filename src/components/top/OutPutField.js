@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from '@emotion/styled'
+import { Store } from '../../store/store'
 
 const OutPutField = () => {
+    const { state } = useContext(Store)
     return (
         <Container>
             <h1>
-                323420
-        </h1>
+                {state.input}
+            </h1>
         </Container>
     )
 }
