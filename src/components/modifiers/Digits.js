@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import styled from '@emotion/styled'
 import { Store } from '../../store/store'
-import { numChecker } from '../utils/numCheck'
+import { numChecker } from '../utils/'
 
 
 const options = [7, 8, 9, 4, 5, 6, 1, 2, 3, '±', 0, '.',]
@@ -11,22 +11,7 @@ const Digits = () => {
     const { input } = state
 
     const onDigitClick = (item) => {
-
         numChecker(item, dispatch, input)
-        // if (state.input === '0') {
-        //     if (item !== ('±')) {
-        //         dispatch({ type: "NUM_INPUT", payload: item })
-        //     } else if (item === '±') {
-        //         dispatch({ type: "NUM_INPUT", payload: Math.sign(-input) })
-        //     }
-        // } else {
-        //     if (item === '±') {
-        //         dispatch({ type: "NUM_INPUT", payload: Math.sign(-input) })
-        //     }
-        //     else {
-        //         dispatch({ type: "NUM_INPUT", payload: `${input}${item}` })
-        //     }
-        // }
     }
     return (
         <Container>

@@ -1,9 +1,5 @@
-// import React, { useContext } from 'react'
-// import { Store } from '../../store/store'
 
 export const numChecker = (num, cb, input) => {
-    // const { state, dispatch } = useContext(Store)
-    // const { input } = state
     switch (num) {
         case 0:
             if (input === '0') cb({ type: "NUM_INPUT", payload: input })
@@ -49,6 +45,10 @@ export const numChecker = (num, cb, input) => {
             if (input === '0') cb({ type: "NUM_INPUT", payload: input })
             else if (input === Math.abs(input)) cb({ type: "NUM_INPUT", payload: -Math.abs(input) })
             else cb({ type: "NUM_INPUT", payload: Math.abs(input) })
+            break;
+        case '.':
+            if (input === '0') cb({ type: "NUM_INPUT", payload: num })
+            else cb({ type: "NUM_INPUT", payload: `${input}${num}` })
             break;
         default:
             break;
