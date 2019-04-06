@@ -13,17 +13,21 @@ export default LogButtons
 
 const Container = styled.div`
 button {
-    background: rgba(40, 40, 40, 1);
-    padding: 10px;
     color: white;
-    border: none;
-    width: 60px;
-    height: 55px;
-    transition: 0.3s ease-in-out;
-    cursor: pointer;
-    :hover {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        margin: auto;
+        margin-bottom: 5px;
+        height: 60px;
+        font-size: 2rem;
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+        background: rgba(20,20,20,1);
+        border: 1px solid black;
+        :hover {
         background: rgba(70,70,70,1);
-        padding: 9px;
         border: 1px solid rgba(125, 125, 125, 5);
     }
 }
