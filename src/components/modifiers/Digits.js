@@ -7,9 +7,22 @@ const options = [7, 8, 9, 4, 5, 6, 1, 2, 3, '±', 0, '.',]
 
 const Digits = () => {
     const { state, dispatch } = useContext(Store)
-
+    const { input } = state
     const onDigitClick = (item) => {
-        dispatch({ type: "NUM_INPUT", payload: item })
+        if (state.input === '0') {
+            if (item !== ('±')) {
+                dispatch({ type: "NUM_INPUT", payload: item })
+            } else if (item === '±') {
+                dispatch({ type: "NUM_INPUT", payload: Math.sign(-input) })
+            }
+        } else {
+            if (item === '±') {
+                dispatch({ type: "NUM_INPUT", payload: Math.sign(-input) })
+            }
+            else {
+                dispatch({ type: "NUM_INPUT", payload: `${input}${item}` })
+            }
+        }
     }
     return (
         <Container>

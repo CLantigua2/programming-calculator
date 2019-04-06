@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from '@emotion/styled'
+import { Store } from '../../store/store'
 
 const options = ['↑', 'Mod', 'CE', 'C', '⇐']
 
 const Modifiers = () => {
-
+    const { state, dispatch } = useContext(Store)
     return (
         <Container>
-            {options.map(item => <p>{item}</p>)}
+            {options.map(item => <button>{item}</button>)}
         </Container>
     )
 }
@@ -20,15 +21,15 @@ const Container = styled.div`
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;
-    p {
+    button {
+        color: white;
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 35px;
+        width: 55px;
         margin: auto;
         margin-bottom: 5px;
-        height: 40px;
-        padding: 10px;
+        height: 60px;
         font-size: 2rem;
         cursor: pointer;
         transition: 0.2s ease-in-out;
