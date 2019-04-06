@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
-const OpButtons = ({ text }) => {
+const LogButtons = ({ text }) => {
     return (
         <Container>
             <button>{text}</button>
@@ -9,7 +9,7 @@ const OpButtons = ({ text }) => {
     )
 }
 
-export default OpButtons
+export default LogButtons
 
 const Container = styled.div`
 button {

@@ -1,10 +1,9 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
-const options = ['↑', 'Mod', 'CE', 'C', '⇐']
+const options = ['÷', 'X', '-', '+', '=']
 
-const Modifiers = () => {
-
+const Operators = () => {
     return (
         <Container>
             {options.map(item => <p>{item}</p>)}
@@ -12,14 +11,14 @@ const Modifiers = () => {
     )
 }
 
-export default Modifiers
+export default Operators
 
 const Container = styled.div`
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
-    width: 100%;
+    width: 10%;
     p {
         display: flex;
         align-items: center;

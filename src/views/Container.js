@@ -15,7 +15,7 @@ const Wrapper = styled.div`
     margin: 0 auto;
     width: 380px;
     color: white;
-    height: 655px;
+    height: 710px;
     padding: 10px;
     background: rgba(45, 45, 45, 5);
 `

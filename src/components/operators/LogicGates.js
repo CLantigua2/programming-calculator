@@ -1,18 +1,18 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import OpButtons from './OpButtons'
+import LogButtons from './LogButtons'
 
 const options = ['Lsh', 'Rsh', 'Or', 'Xor', 'Not', 'And']
 
-const Operations = () => {
+const LogicGates = () => {
     return (
         <Container>
-            {options.map((item, i) => <OpButtons key={i + 1} text={item} />)}
+            {options.map((item, i) => <LogButtons key={i + 1} text={item} />)}
         </Container>
     )
 }
 
-export default Operations
+export default LogicGates
 
 const Container = styled.div`
     display: flex;

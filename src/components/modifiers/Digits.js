@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
-const options = ['↑', 'Mod', 'CE', 'C', '⇐']
+const options = [7, 8, 9, 4, 5, 6, 1, 2, 3, '±', 0, '.',]
 
-const Modifiers = () => {
+const Digits = () => {
 
     return (
         <Container>
@@ -12,14 +12,14 @@ const Modifiers = () => {
     )
 }
 
-export default Modifiers
+export default Digits
 
 const Container = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    width: 100%;
+    width: 58%;
     p {
         display: flex;
         align-items: center;
