@@ -1,18 +1,20 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Store } from '../../store/store'
-import { toBinaryString } from '../utils/'
+import { toBinaryString, hexString, octString } from '../utils/'
 import styled from '@emotion/styled'
 
 const Modes = () => {
     const { state } = useContext(Store)
     const { input } = state
     const newInput = toBinaryString(input)
+    const newHex = hexString(input)
+    const newOct = octString(input)
 
     return (
         <Container>
-            <p>HEX: 0</p>
-            <p>DEC: 0</p>
-            <p>OCT: 0</p>
+            <p>HEX: {newHex.split('.')[0]}</p>
+            <p>DEC: {input}</p>
+            <p>OCT: {newOct}</p>
             <p>BIN: {newInput}</p>
         </Container>
     )

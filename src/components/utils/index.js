@@ -118,7 +118,8 @@ export const opChecker = (op, cb, input, savedOp, savedInput) => {
 }
 
 export const toBinaryString = (item) => {
-    let number = parseFloat(item)
+
+    let number = parseInt(item)
     let bin = ""
     if (number === 0) {
         return "0"
@@ -128,4 +129,12 @@ export const toBinaryString = (item) => {
         number = Math.floor(number / 2)
     }
     return bin
+}
+
+export const hexString = (item) => {
+    return Math.abs(item).toString(16).toUpperCase();
+}
+
+export const octString = (item) => {
+    return Math.abs(item).toString(8)
 }

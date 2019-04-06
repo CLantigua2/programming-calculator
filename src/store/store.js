@@ -6,7 +6,6 @@ const initialState = {
     input: '0',
     savedInput: '',
     savedOperator: '',
-    binary: '0'
 }
 const reducer = (state, action) => {
     switch (action.type) {
@@ -28,11 +27,6 @@ const reducer = (state, action) => {
                 input: action.payload.input,
                 savedInput: '',
                 savedOperator: ''
-            }
-        case "TO_BINARY":
-            return {
-                ...state,
-                binary: action.payload
             }
         default:
             return state;
