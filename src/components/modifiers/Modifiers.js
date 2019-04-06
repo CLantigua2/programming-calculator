@@ -16,13 +16,24 @@ export default Modifiers
 const Container = styled.div`
     display: flex;
     flex-direction: row;
+    justify-content: center;
     flex-wrap: wrap;
     width: 100%;
     p {
-        width: 40px;
-        text-align: center;
-        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 43px;
+        margin: auto;
+        height: 50px;
         padding: 10px;
-        font-size: 1.6rem;
+        font-size: 2rem;
+        cursor: pointer;
+        transition: 0.5s ease-in-out;
+        :hover {
+        background: rgba(70,70,70,1);
+        padding: 9px;
+        border: 1px solid rgba(125, 125, 125, 5);
+    }
     }
 `
