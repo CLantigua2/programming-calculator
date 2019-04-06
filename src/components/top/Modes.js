@@ -4,9 +4,10 @@ import styled from '@emotion/styled'
 const ops = ['HEX', 'DEC', 'OCT', 'BIN']
 
 const newOptions = ops.map(item => ({ name: item, value: 0 }))
+
 const Modes = () => {
     return (
-        <Container>{newOptions.map(item => <p key={item.name}>{item.name}: {item.value}</p>)}</Container>
+        <Container>{newOptions.map(item => <p key={item.name}>{item.name} {item.value}</p>)}</Container>
     )
 }
 

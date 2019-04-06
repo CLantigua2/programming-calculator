@@ -16,7 +16,7 @@ const Tabs = () => {
 export default Tabs
 
 const Container = styled.div`
-    width: 100%;
+    width: 95%;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -24,10 +24,11 @@ const Container = styled.div`
     font-weight: bold;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
+    padding: 0 10px;
+    /* margin-bottom: 10px; */
     .rotate {
         transform: rotate(90deg);
-        padding: 10px 15px;
+        padding: 15px 10px;
         cursor: pointer;
         transition: 0.2s ease-in-out;
         &:hover {
