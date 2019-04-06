@@ -22,6 +22,7 @@ const Container = styled.div`
     width: 100%;
     text-align: right;
     margin-bottom: 20px;
+    text-overflow: ellipsis;
     .savedInput {
         margin-bottom: 10px;
         margin-right: 10px;

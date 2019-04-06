@@ -63,7 +63,7 @@ export const opChecker = (op, cb, input, savedOp, savedInput) => {
                     cb({ type: "OP_INPUT", payload: { savedInput: input, savedOperator: op } })
                 }
                 else {
-                    cb({ type: "GET_ANSWER", payload: { input: parseInt(savedInput) / parseInt(input) } })
+                    cb({ type: "GET_ANSWER", payload: { input: savedInput / input } })
                 }
             }
             break;
@@ -74,7 +74,7 @@ export const opChecker = (op, cb, input, savedOp, savedInput) => {
                     cb({ type: "OP_INPUT", payload: { savedInput: input, savedOperator: op } })
                 }
                 else {
-                    cb({ type: "GET_ANSWER", payload: { input: parseInt(savedInput) * parseInt(input) } })
+                    cb({ type: "GET_ANSWER", payload: { input: savedInput * input } })
                 }
             }
             break;
@@ -85,7 +85,7 @@ export const opChecker = (op, cb, input, savedOp, savedInput) => {
                     cb({ type: "OP_INPUT", payload: { savedInput: input, savedOperator: op } })
                 }
                 else {
-                    cb({ type: "GET_ANSWER", payload: { input: parseInt(savedInput) - parseInt(input) } })
+                    cb({ type: "GET_ANSWER", payload: { input: savedInput - input } })
                 }
             }
             break;
@@ -96,7 +96,7 @@ export const opChecker = (op, cb, input, savedOp, savedInput) => {
                     cb({ type: "OP_INPUT", payload: { savedInput: input, savedOperator: op } })
                 }
                 else {
-                    cb({ type: "GET_ANSWER", payload: { input: parseInt(savedInput) + parseInt(input) } })
+                    cb({ type: "GET_ANSWER", payload: { input: savedInput + input } })
                 }
             }
             break;
@@ -107,7 +107,7 @@ export const opChecker = (op, cb, input, savedOp, savedInput) => {
                     cb({ type: "OP_INPUT", payload: { savedInput: input, savedOperator: op } })
                 }
                 else {
-                    cb({ type: "GET_ANSWER", payload: { input: parseInt(savedInput) / parseInt(input) } })
+                    cb({ type: "GET_ANSWER", payload: { input: savedInput / input } })
                 }
             }
             break;
@@ -115,4 +115,17 @@ export const opChecker = (op, cb, input, savedOp, savedInput) => {
         default:
             break;
     }
+}
+
+export const toBinaryString = (item) => {
+    let number = parseFloat(item)
+    let bin = ""
+    if (number === 0) {
+        return "0"
+    }
+    while (number > 0) {
+        bin = (number % 2) + bin
+        number = Math.floor(number / 2)
+    }
+    return bin
 }

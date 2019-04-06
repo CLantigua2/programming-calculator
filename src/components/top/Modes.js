@@ -1,13 +1,20 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { Store } from '../../store/store'
+import { toBinaryString } from '../utils/'
 import styled from '@emotion/styled'
 
-const ops = ['HEX', 'DEC', 'OCT', 'BIN']
-
-const newOptions = ops.map(item => ({ name: item, value: 0 }))
-
 const Modes = () => {
+    const { state } = useContext(Store)
+    const { input } = state
+    const newInput = toBinaryString(input)
+
     return (
-        <Container>{newOptions.map(item => <p key={item.name}>{item.name} {item.value}</p>)}</Container>
+        <Container>
+            <p>HEX: 0</p>
+            <p>DEC: 0</p>
+            <p>OCT: 0</p>
+            <p>BIN: {newInput}</p>
+        </Container>
     )
 }
 
