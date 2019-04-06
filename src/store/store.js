@@ -8,8 +8,8 @@ const initialState = {
 
 const reducer = (state, action) => {
     switch (action.type) {
-        case "HELLO":
-            break;
+        case "NUM_INPUT":
+            return { ...state, input: action.payload }
         default:
             return state;
     }

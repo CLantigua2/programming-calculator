@@ -1,13 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from '@emotion/styled'
+import { Store } from '../../store/store'
+
 
 const options = [7, 8, 9, 4, 5, 6, 1, 2, 3, '±', 0, '.',]
 
 const Digits = () => {
+    const { state, dispatch } = useContext(Store)
 
+    const onDigitClick = (item) => {
+        dispatch({ type: "NUM_INPUT", payload: item })
+    }
     return (
         <Container>
-            {options.map(item => <button>{item}</button>)}
+            {options.map(item => <button onClick={() => onDigitClick(item)}>{item}</button>)}
         </Container>
     )
 }
