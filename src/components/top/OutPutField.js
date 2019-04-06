@@ -7,7 +7,7 @@ const OutPutField = () => {
     return (
         <Container>
             <div className="savedInput">
-                <p>{state.savedInput}</p>
+                <p>{state.savedInput}{state.savedOperator}</p>
             </div>
             <h1>
                 {state.input}

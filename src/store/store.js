@@ -7,21 +7,27 @@ const initialState = {
     savedInput: '',
     savedOperator: ''
 }
-
 const reducer = (state, action) => {
+    console.log(state)
     switch (action.type) {
         case "CLEAR_CALC":
             return { input: '0' }
         case "NUM_INPUT":
             return { ...state, input: action.payload }
         case "OP_INPUT":
-            console.log(action.payload)
-            const { savedInput, savedOp, op } = action.payload
+            const { savedInput, savedOperator } = action.payload
             return {
                 ...state,
                 input: '0',
-                savedInput,
-                savedOperator: `${savedOp} ${op}`,
+                savedInput: savedInput,
+                savedOperator: savedOperator,
+            }
+        case "GET_ANSWER":
+            return {
+                ...state,
+                input: action.payload.input,
+                savedInput: '',
+                savedOperator: ''
             }
         default:
             return state;

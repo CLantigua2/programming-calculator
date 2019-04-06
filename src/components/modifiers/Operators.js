@@ -12,7 +12,6 @@ const Operators = () => {
     const onOpClick = item => {
         opChecker(item, dispatch, input, savedOperator, savedInput)
     }
-    console.log(savedOperator)
     return (
         <Container>
             {options.map(item => <button key={item} onClick={() => onOpClick(item)}>{item}</button>)}

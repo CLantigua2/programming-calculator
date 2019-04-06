@@ -58,8 +58,14 @@ export const numChecker = (num, cb, input) => {
 export const opChecker = (op, cb, input, savedOp, savedInput) => {
     switch (op) {
         case '÷':
+            console.log(savedInput)
             if (input !== '0') {
-                cb({ type: "OP_INPUT", payload: { savedInput: `${input}${op}` } })
+                if (savedOp !== '÷') {
+                    cb({ type: "OP_INPUT", payload: { savedInput: input, savedOperator: op } })
+                }
+                else {
+                    cb({ type: "GET_ANSWER", payload: { input: parseInt(savedInput) / parseInt(input) } })
+                }
             }
             break;
         case 'X':
