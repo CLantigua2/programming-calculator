@@ -1,10 +1,10 @@
-import React from 'react';
+import React from 'react'
 import Container from './views/Container'
 import Tabs from './components/top/Tabs'
 import TopSection from './views/TopSection'
-import BottomSection from './views/BottomSection';
+import BottomSection from './views/BottomSection'
 
-import './App.css';
+import './App.css'
 
 const App = () => {
   return (
@@ -15,8 +15,8 @@ const App = () => {
         <BottomSection />
       </Container>
     </div>
-  );
+  )
 }
 
 
-export default App;
+export default App

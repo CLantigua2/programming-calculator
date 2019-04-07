@@ -3,16 +3,13 @@ import styled from '@emotion/styled'
 import { Store } from '../../store/store'
 import { numChecker } from '../utils/'
 
-
-const options = [7, 8, 9, 4, 5, 6, 1, 2, 3, '±', 0, '.',]
-
 const Digits = () => {
+    const options = [7, 8, 9, 4, 5, 6, 1, 2, 3, '±', 0, '.',]
     const { state, dispatch } = useContext(Store)
     const { input } = state
 
-    const onDigitClick = (item) => {
-        numChecker(item, dispatch, input)
-    }
+    const onDigitClick = (item) => numChecker(item, dispatch, input)
+
     return (
         <Container>
             {options.map(item => <button key={item} onClick={() => onDigitClick(item)}>{item}</button>)}

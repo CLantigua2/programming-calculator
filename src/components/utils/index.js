@@ -117,6 +117,16 @@ export const opChecker = (op, cb, input, savedOp, savedInput) => {
     }
 }
 
+export const modChecker = (item, cb, input) => {
+    switch (item) {
+        case 'C':
+            cb({ type: "CLEAR_CALC", payload: { input: '0' } })
+            break;
+        default:
+            break;
+    }
+}
+
 export const toBinaryString = (item) => {
     return Math.abs(parseInt(item)).toString(2)
 }

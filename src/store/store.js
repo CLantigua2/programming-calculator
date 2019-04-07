@@ -10,7 +10,7 @@ const initialState = {
 const reducer = (state, action) => {
     switch (action.type) {
         case "CLEAR_CALC":
-            return { input: '0' }
+            return { ...state, input: action.payload.input }
         case "NUM_INPUT":
             return { ...state, input: action.payload }
         case "OP_INPUT":
@@ -29,7 +29,7 @@ const reducer = (state, action) => {
                 savedOperator: ''
             }
         default:
-            return state;
+            throw new Error(`unsoported action type ${action.type}`)
     }
 }
 

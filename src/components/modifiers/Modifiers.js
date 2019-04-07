@@ -1,17 +1,14 @@
 import React, { useContext } from 'react'
 import styled from '@emotion/styled'
 import { Store } from '../../store/store'
+import { modChecker } from '../utils/'
 
 const options = ['↑', 'Mod', 'CE', 'C', '⇐']
 
 const Modifiers = () => {
     const { state, dispatch } = useContext(Store)
     const { input } = state
-    const onModClick = item => {
-        if (item === 'C') {
-            dispatch({ type: "NUM_INPUT", payload: '0' })
-        }
-    }
+    const onModClick = item => modChecker(item, dispatch, input)
     return (
         <Container>
             {options.map(item => <button key={item} onClick={() => onModClick(item)}>{item}</button>)}
